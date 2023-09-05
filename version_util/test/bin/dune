@@ -6,10 +6,10 @@
   version_util)
  (modules test_rewrite) (preprocess (pps ppx_jane)))
 
-(alias (name DEFAULT) (deps main.exe) (action (bash ./main.exe)))
+(rule (alias DEFAULT) (deps main.exe) (action (bash ./main.exe)))
 
-(alias (name javascript-runtest) (deps main.bc.js)
- (action (bash "%{NODE} main.bc.js")))
+(rule (alias javascript-runtest) (deps main.bc.js)
+ (action (bash "node main.bc.js")))
 
-(alias (name DEFAULT) (deps test_rewrite.exe main.exe)
+(rule (alias DEFAULT) (deps test_rewrite.exe main.exe)
  (action (bash ./test_rewrite.exe)))
