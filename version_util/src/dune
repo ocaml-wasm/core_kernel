@@ -1,5 +1,6 @@
 (library (name version_util) (public_name core_kernel.version_util)
- (js_of_ocaml (javascript_files version_util.js) (wasm_files version_util.wat))
+ (js_of_ocaml (javascript_files version_util.js))
+ (wasm_of_ocaml (javascript_files version_util.js) (wasm_files version_util.wat))
  (foreign_stubs (language c) (names version_util_fallback_stubs))
  (libraries core)
  (preprocess (pps ppx_jane)))
