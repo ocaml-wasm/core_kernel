@@ -1,4 +1,7 @@
 (module
+   (type $bytes (array (mut i8)))
+   (type $string (struct (field anyref)))
+
    (global $generated_build_info_global (mut (ref eq))
       (@string ""))
 
